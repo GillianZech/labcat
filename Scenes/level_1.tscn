@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bks885eh43joq"]
+
+[ext_resource type="PackedScene" uid="uid://cf52sa7fqtft7" path="res://Scenes/cat.tscn" id="1_no502"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Cat" parent="." instance=ExtResource("1_no502")]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
