@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://cf52sa7fqtft7"]
+[gd_scene load_steps=21 format=3 uid="uid://cf52sa7fqtft7"]
 
 [ext_resource type="Texture2D" uid="uid://dp31bok0hrsxi" path="res://Assets/cat_sprite_sheet.png" id="1_8a24r"]
+[ext_resource type="Script" path="res://Code/cat.gd" id="1_bx0kx"]
 [ext_resource type="Texture2D" uid="uid://dascpsjcm6hc7" path="res://Assets/cat_jump.png" id="2_per4h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wbtu"]
@@ -136,8 +137,7 @@ radius = 17.0
 height = 34.0
 
 [node name="Cat" type="CharacterBody2D"]
-
-[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("1_bx0kx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_as4g7")

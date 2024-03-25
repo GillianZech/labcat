@@ -1,0 +1,146 @@
+[gd_scene load_steps=21 format=3 uid="uid://b1lqmbc8hl0dm"]
+
+[ext_resource type="Script" path="res://Code/gridcat.gd" id="1_vmai7"]
+[ext_resource type="Texture2D" uid="uid://dp31bok0hrsxi" path="res://Assets/cat_sprite_sheet.png" id="2_0vobm"]
+[ext_resource type="Texture2D" uid="uid://dkwvs8l0e5310" path="res://Assets/gridcat.png" id="3_fvt8r"]
+[ext_resource type="Texture2D" uid="uid://daqqvt6u82300" path="res://Assets/gridcat_down.png" id="3_xsqvm"]
+[ext_resource type="Texture2D" uid="uid://tcik8urvmls" path="res://Assets/gridcat_left.png" id="5_x24c3"]
+[ext_resource type="Texture2D" uid="uid://dheqno1xrfjpp" path="res://Assets/gridcat_right.png" id="6_t85fs"]
+[ext_resource type="Texture2D" uid="uid://3pex2t2u3lmi" path="res://Assets/gridcat_up.png" id="7_tro0q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47ore"]
+atlas = ExtResource("2_0vobm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv6bi"]
+atlas = ExtResource("2_0vobm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7xbo"]
+atlas = ExtResource("2_0vobm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyofg"]
+atlas = ExtResource("2_0vobm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0046m"]
+atlas = ExtResource("2_0vobm")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgnmv"]
+atlas = ExtResource("2_0vobm")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa630"]
+atlas = ExtResource("2_0vobm")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6f66"]
+atlas = ExtResource("2_0vobm")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6620i"]
+atlas = ExtResource("2_0vobm")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghbae"]
+atlas = ExtResource("2_0vobm")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay73f"]
+atlas = ExtResource("3_fvt8r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x41km"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47ore")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv6bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7xbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyofg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0046m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgnmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aa630")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6f66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6620i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghbae")
+}],
+"loop": true,
+"name": &"before",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xsqvm")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay73f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_x24c3")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_t85fs")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tro0q")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhyct"]
+size = Vector2(32, 32)
+
+[node name="Gridcat" type="CharacterBody2D"]
+script = ExtResource("1_vmai7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x41km")
+animation = &"idle"
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_jhyct")
