@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bks885eh43joq"]
+[gd_scene load_steps=6 format=3 uid="uid://bks885eh43joq"]
 
 [ext_resource type="Texture2D" uid="uid://7w8bxvkh34oo" path="res://Assets/tilemap.png" id="2_yj3cq"]
 [ext_resource type="PackedScene" uid="uid://b1lqmbc8hl0dm" path="res://Scenes/gridcat.tscn" id="3_nwudf"]
@@ -154,11 +154,14 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_g6i6e"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Steel"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/3 = SubResource("TileSetAtlasSource_bby6h")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hcvo"]
+size = Vector2(32, 32)
 
 [node name="Level1" type="Node2D"]
 
@@ -168,6 +171,18 @@ format = 2
 layer_0/tile_data = PackedInt32Array(65540, 131075, 3, 65539, 65539, 3, 65538, 65539, 3, 65537, 65539, 3, -262141, 196611, 0, -196605, 196611, 1, -131069, 196611, 1, -65533, 196611, 2, -196613, 3, 3, -196612, 65539, 3, -196611, 65539, 3, -196610, 65539, 3, -196609, 131075, 3, -65540, 3, 3, -65539, 65539, 3, 131066, 3, 3, 131067, 131075, 3, -196614, 196611, 0, -131078, 196611, 1, -65542, 196611, 1, -262143, 196611, 1, -655359, 196611, 0, -589823, 196611, 1, -524287, 196611, 1, -458751, 196611, 1, -393215, 196611, 1, -327679, 196611, 1, 393213, 196611, 2, 327677, 196611, 1, 262141, 196611, 1, 196605, 196611, 1, 196609, 65539, 3, 196608, 65539, 3, 262143, 3, 3, 327681, 131075, 3, 327680, 65539, 3, 393215, 3, 3, 196611, 131075, 3, 196610, 65539, 3, 458755, 196611, 2, 393219, 196611, 1, 327683, 196611, 1, 262147, 196611, 1, 458753, 131075, 3, 458752, 65539, 3, 524287, 65539, 3, 524282, 196611, 0, 524283, 65539, 3, 524284, 65539, 3, 524285, 65539, 3, 524286, 65539, 3, 393209, 3, 3, 393210, 65539, 3, 393211, 65539, 3, 393212, 131075, 3, 589818, 196611, 2, 655352, 196611, 1, 589816, 196611, 1, 524280, 196611, 1, 458744, 196611, 1, 393208, 196611, 0, 720888, 196611, 2, 655361, 131075, 3, 655360, 65539, 3, 720895, 65539, 3, 720894, 65539, 3, 720893, 65539, 3, 720892, 65539, 3, 720891, 65539, 3, 720890, 65539, 3, 720889, 65539, 3, -6, 196611, 2, -196607, 196611, 2, -65535, 131075, 3, -65536, 65539, 3, 65536, 3, 3, 131071, 196611, 2, 65535, 196611, 1, -1, 196611, 1, -65538, 65539, 3, -65537, 131075, 3, 131069, 196611, 0)
 
 [node name="Gridcat" parent="." instance=ExtResource("3_nwudf")]
-position = Vector2(16, 16)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Door" type="Area2D" parent="Doors"]
+position = Vector2(112, 16)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door"]
+shape = SubResource("RectangleShape2D_6hcvo")
+
+[node name="LockedDoor" type="Sprite2D" parent="Doors/Door"]
+
+[node name="UnlockedDoor" type="Sprite2D" parent="Doors/Door"]
