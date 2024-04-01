@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://ecjcyeyfhoos"]
+
+[node name="EndArea" type="Area2D"]
