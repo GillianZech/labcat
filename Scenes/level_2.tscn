@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://dr04sgshswvpk"]
+
+[ext_resource type="Script" path="res://Code/Lever.gd" id="1_1elu6"]
+[ext_resource type="TileSet" uid="uid://dymys5n753uww" path="res://Scenes/udoors.tres" id="2_l37j8"]
+[ext_resource type="Texture2D" uid="uid://prxfquaqoqiq" path="res://Assets/lever.png" id="2_oci74"]
+[ext_resource type="TileSet" uid="uid://bppkhuecekok8" path="res://Scenes/walls.tres" id="3_k4ntr"]
+[ext_resource type="TileSet" uid="uid://dhymlbjrbm5fx" path="res://Scenes/doors.tres" id="3_qb1lu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7wxd"]
+size = Vector2(32, 32)
+
+[node name="Level2" type="Node2D"]
+
+[node name="Walls" type="TileMap" parent="."]
+tile_set = ExtResource("3_k4ntr")
+format = 2
+layer_0/tile_data = PackedInt32Array(131086, 131075, 3, 131085, 65539, 3, 131084, 65539, 3, 131083, 65539, 3, 131082, 65539, 3, 131081, 65539, 3, 131080, 65539, 3, 131079, 65539, 3, 131078, 65539, 3, 131077, 3, 3)
+
+[node name="UDoorsMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_l37j8")
+format = 2
+
+[node name="DoorsMap" type="TileMap" parent="."]
+tile_set = ExtResource("3_qb1lu")
+format = 2
+
+[node name="Lever" type="Area2D" parent="."]
+position = Vector2(80, -80)
+collision_layer = 2
+script = ExtResource("1_1elu6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lever"]
+shape = SubResource("RectangleShape2D_h7wxd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lever"]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.248062, 0.372093)
+texture = ExtResource("2_oci74")
+
+[connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]

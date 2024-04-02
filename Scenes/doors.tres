@@ -1,0 +1,16 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dhymlbjrbm5fx"]
+
+[ext_resource type="Texture2D" uid="uid://n6abpqikd4kk" path="res://Assets/locked_door.png" id="1_r5j1g"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yg240"]
+texture = ExtResource("1_r5j1g")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/4 = SubResource("TileSetAtlasSource_yg240")
