@@ -1,8 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://b1lqmbc8hl0dm"]
+[gd_scene load_steps=20 format=3 uid="uid://b1lqmbc8hl0dm"]
 
 [ext_resource type="Script" path="res://Code/gridcat.gd" id="1_vmai7"]
 [ext_resource type="Texture2D" uid="uid://dp31bok0hrsxi" path="res://Assets/cat_sprite_sheet.png" id="2_0vobm"]
-[ext_resource type="Texture2D" uid="uid://dkwvs8l0e5310" path="res://Assets/gridcat.png" id="3_fvt8r"]
 [ext_resource type="Texture2D" uid="uid://daqqvt6u82300" path="res://Assets/gridcat_down.png" id="3_xsqvm"]
 [ext_resource type="Texture2D" uid="uid://tcik8urvmls" path="res://Assets/gridcat_left.png" id="5_x24c3"]
 [ext_resource type="Texture2D" uid="uid://dheqno1xrfjpp" path="res://Assets/gridcat_right.png" id="6_t85fs"]
@@ -49,7 +48,7 @@ atlas = ExtResource("2_0vobm")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ay73f"]
-atlas = ExtResource("3_fvt8r")
+atlas = ExtResource("6_t85fs")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x41km"]
