@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://ecjcyeyfhoos"]
+[gd_scene load_steps=4 format=3 uid="uid://ecjcyeyfhoos"]
+
+[ext_resource type="Texture2D" uid="uid://dmj0qibpvl6mm" path="res://Assets/flag.png" id="1_1rds8"]
+[ext_resource type="Script" path="res://Code/end_area.gd" id="1_o8isg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cul84"]
+size = Vector2(28, 28)
 
 [node name="EndArea" type="Area2D"]
+script = ExtResource("1_o8isg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0625, 0.0625)
+texture = ExtResource("1_1rds8")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_cul84")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
