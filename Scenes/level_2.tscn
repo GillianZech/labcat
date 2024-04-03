@@ -44,6 +44,7 @@ position = Vector2(256, 128)
 
 [node name="EndArea" parent="." instance=ExtResource("7_vong8")]
 position = Vector2(448, 96)
+NEXT_LEVEL = "level_3"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

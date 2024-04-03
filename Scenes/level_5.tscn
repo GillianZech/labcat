@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmdmlhx2ergbi"]
+
+[ext_resource type="PackedScene" uid="uid://ecjcyeyfhoos" path="res://Scenes/end_area.tscn" id="1_wocgw"]
+[ext_resource type="PackedScene" uid="uid://b1lqmbc8hl0dm" path="res://Scenes/gridcat.tscn" id="2_4p77e"]
+[ext_resource type="TileSet" uid="uid://bppkhuecekok8" path="res://Scenes/walls.tres" id="3_hdjhd"]
+[ext_resource type="TileSet" uid="uid://dymys5n753uww" path="res://Scenes/udoors.tres" id="4_yq85j"]
+[ext_resource type="TileSet" uid="uid://dhymlbjrbm5fx" path="res://Scenes/doors.tres" id="5_vl0ap"]
+
+[node name="Level5" type="Node2D"]
+
+[node name="Walls" type="TileMap" parent="."]
+tile_set = ExtResource("3_hdjhd")
+format = 2
+layer_0/tile_data = PackedInt32Array(131086, 131075, 3, 131085, 65539, 3, 131084, 65539, 3, 131083, 65539, 3, 131082, 65539, 3, 131081, 65539, 3, 131080, 65539, 3, 131079, 65539, 3, 131078, 65539, 3, 131077, 3, 3)
+
+[node name="UDoorsMap" type="TileMap" parent="."]
+tile_set = ExtResource("4_yq85j")
+format = 2
+
+[node name="DoorsMap" type="TileMap" parent="."]
+tile_set = ExtResource("5_vl0ap")
+format = 2
+
+[node name="EndArea" parent="." instance=ExtResource("1_wocgw")]
+position = Vector2(24, 80)
+NEXT_LEVEL = "level_6"
+
+[node name="Gridcat" parent="." instance=ExtResource("2_4p77e")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
