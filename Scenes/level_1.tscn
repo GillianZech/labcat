@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bks885eh43joq"]
+[gd_scene load_steps=9 format=3 uid="uid://bks885eh43joq"]
 
 [ext_resource type="TileSet" uid="uid://bppkhuecekok8" path="res://Scenes/walls.tres" id="1_irwy6"]
 [ext_resource type="TileSet" uid="uid://dymys5n753uww" path="res://Scenes/udoors.tres" id="2_12ktd"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b1lqmbc8hl0dm" path="res://Scenes/gridcat.tscn" id="3_nwudf"]
 [ext_resource type="Script" path="res://Code/Lever.gd" id="5_2urvu"]
 [ext_resource type="Texture2D" uid="uid://prxfquaqoqiq" path="res://Assets/lever.png" id="5_7yhgs"]
+[ext_resource type="PackedScene" uid="uid://ecjcyeyfhoos" path="res://Scenes/end_area.tscn" id="7_v1jlf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eedr6"]
 size = Vector2(32, 32)
@@ -47,6 +48,9 @@ shape = SubResource("RectangleShape2D_eedr6")
 position = Vector2(0, -4.76837e-07)
 scale = Vector2(0.248062, 0.372093)
 texture = ExtResource("5_7yhgs")
+
+[node name="EndArea" parent="." instance=ExtResource("7_v1jlf")]
+position = Vector2(-160, -96)
 
 [node name="Gridcat" parent="." instance=ExtResource("3_nwudf")]
 

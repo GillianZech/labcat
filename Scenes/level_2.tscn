@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dr04sgshswvpk"]
+[gd_scene load_steps=9 format=3 uid="uid://dr04sgshswvpk"]
 
 [ext_resource type="Script" path="res://Code/Lever.gd" id="1_1elu6"]
 [ext_resource type="TileSet" uid="uid://dymys5n753uww" path="res://Scenes/udoors.tres" id="2_l37j8"]
 [ext_resource type="Texture2D" uid="uid://prxfquaqoqiq" path="res://Assets/lever.png" id="2_oci74"]
 [ext_resource type="TileSet" uid="uid://bppkhuecekok8" path="res://Scenes/walls.tres" id="3_k4ntr"]
 [ext_resource type="TileSet" uid="uid://dhymlbjrbm5fx" path="res://Scenes/doors.tres" id="3_qb1lu"]
+[ext_resource type="PackedScene" uid="uid://b1lqmbc8hl0dm" path="res://Scenes/gridcat.tscn" id="6_bu1ek"]
+[ext_resource type="PackedScene" uid="uid://ecjcyeyfhoos" path="res://Scenes/end_area.tscn" id="7_vong8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7wxd"]
 size = Vector2(32, 32)
@@ -36,5 +38,13 @@ shape = SubResource("RectangleShape2D_h7wxd")
 position = Vector2(0, -4.76837e-07)
 scale = Vector2(0.248062, 0.372093)
 texture = ExtResource("2_oci74")
+
+[node name="Gridcat" parent="." instance=ExtResource("6_bu1ek")]
+position = Vector2(256, 128)
+
+[node name="EndArea" parent="." instance=ExtResource("7_vong8")]
+position = Vector2(448, 96)
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
