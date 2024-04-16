@@ -145,3 +145,12 @@ centered = false
 position = Vector2(16, 16)
 scale = Vector2(0.775, 0.775)
 shape = SubResource("RectangleShape2D_jhyct")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.4
+drag_top_margin = 0.4
+drag_right_margin = 0.4
+drag_bottom_margin = 0.4

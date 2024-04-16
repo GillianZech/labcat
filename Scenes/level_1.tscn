@@ -54,6 +54,4 @@ position = Vector2(-160, -96)
 
 [node name="Gridcat" parent="." instance=ExtResource("3_nwudf")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
