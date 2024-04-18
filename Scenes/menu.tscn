@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=3 uid="uid://bwhol1pxvt8v"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_rux68"]
+[ext_resource type="Texture2D" uid="uid://c27gk0m4ut5ff" path="res://Assets/play (1).png" id="2_0qenj"]
+[ext_resource type="Texture2D" uid="uid://6yljrwm15tpi" path="res://Assets/playpressed.png" id="3_m7n00"]
+[ext_resource type="Texture2D" uid="uid://toumh1stvhvq" path="res://Assets/quit.png" id="4_d2vym"]
+[ext_resource type="Texture2D" uid="uid://bihc7iqc0xfyc" path="res://Assets/credits.png" id="4_w85tj"]
+[ext_resource type="Texture2D" uid="uid://q2dij7vhlqcq" path="res://Assets/quitpressed.png" id="5_rkxiu"]
+[ext_resource type="Texture2D" uid="uid://cqkq25gn2nufd" path="res://Assets/creditspressed.png" id="5_rlcmt"]
+[ext_resource type="Texture2D" uid="uid://dnbrvngobt54e" path="res://Assets/title.png" id="8_x7ele"]
+[ext_resource type="Texture2D" uid="uid://3pex2t2u3lmi" path="res://Assets/gridcat_up.png" id="9_2ywqe"]
+[ext_resource type="Texture2D" uid="uid://daqqvt6u82300" path="res://Assets/gridcat_down.png" id="10_03x5r"]
+[ext_resource type="Texture2D" uid="uid://dheqno1xrfjpp" path="res://Assets/gridcat_right.png" id="10_vei0s"]
+[ext_resource type="Texture2D" uid="uid://tcik8urvmls" path="res://Assets/gridcat_left.png" id="12_rl70q"]
+
+[sub_resource type="Theme" id="Theme_cxq23"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwn3j"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("9_2ywqe")
+}, {
+"duration": 3.0,
+"texture": ExtResource("12_rl70q")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_03x5r")
+}, {
+"duration": 3.0,
+"texture": ExtResource("10_vei0s")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 5.0
+}]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 559.0
+offset_top = 301.0
+offset_right = -534.0
+offset_bottom = -246.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_cxq23")
+script = ExtResource("1_rux68")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -9.395
+anchor_top = -2.865
+anchor_right = -9.395
+anchor_bottom = -2.865
+offset_left = 429.305
+offset_top = -410.635
+offset_right = 778.305
+offset_bottom = 1966.36
+scale = Vector2(0.7, 0.7)
+theme = SubResource("Theme_cxq23")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.96
+alignment = 1
+
+[node name="Play" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_0qenj")
+texture_pressed = ExtResource("3_m7n00")
+
+[node name="Credits" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_w85tj")
+texture_pressed = ExtResource("5_rlcmt")
+
+[node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_d2vym")
+texture_pressed = ExtResource("5_rkxiu")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, -112)
+texture = ExtResource("8_x7ele")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-239, 126)
+scale = Vector2(5.03125, 4.625)
+sprite_frames = SubResource("SpriteFrames_xwn3j")
+animation = &"spin"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
