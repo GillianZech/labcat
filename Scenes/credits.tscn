@@ -1,3 +1,28 @@
-[gd_scene format=3 uid="uid://7i651u4lnctr"]
+[gd_scene load_steps=5 format=3 uid="uid://7i651u4lnctr"]
 
-[node name="Credits" type="Node2D"]
+[ext_resource type="Script" path="res://credits.gd" id="1_k8iaw"]
+[ext_resource type="Texture2D" uid="uid://tafb50iex7ju" path="res://Assets/return.png" id="2_uvduk"]
+[ext_resource type="Texture2D" uid="uid://dv8and7ivjfct" path="res://Assets/returnpressed.png" id="3_yj2dn"]
+[ext_resource type="Texture2D" uid="uid://cme1tdb51ktuu" path="res://Assets/credits (1).png" id="4_37iwa"]
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k8iaw")
+
+[node name="return" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 493.0
+offset_right = 768.0
+offset_bottom = 609.0
+texture_normal = ExtResource("2_uvduk")
+texture_pressed = ExtResource("3_yj2dn")
+
+[node name="Credits(1)" type="Sprite2D" parent="."]
+position = Vector2(559, 259)
+texture = ExtResource("4_37iwa")
