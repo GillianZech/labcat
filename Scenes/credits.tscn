@@ -26,3 +26,5 @@ texture_pressed = ExtResource("3_yj2dn")
 [node name="Credits(1)" type="Sprite2D" parent="."]
 position = Vector2(559, 259)
 texture = ExtResource("4_37iwa")
+
+[connection signal="pressed" from="return" to="." method="_on_return_pressed"]
