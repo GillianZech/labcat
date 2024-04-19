@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cm2vc8unlo44m"]
 
-[ext_resource type="PackedScene" uid="uid://bks885eh43joq" path="res://Scenes/level_1.tscn" id="1_2ldlc"]
 [ext_resource type="Script" path="res://Code/scene_controller.gd" id="1_8srry"]
+[ext_resource type="PackedScene" uid="uid://bwhol1pxvt8v" path="res://Scenes/menu.tscn" id="3_tg31d"]
 
 [sub_resource type="Animation" id="Animation_g0wwi"]
 length = 0.001
@@ -57,8 +57,6 @@ _data = {
 script = ExtResource("1_8srry")
 ANIM = NodePath("AnimationPlayer")
 
-[node name="Level1" parent="." instance=ExtResource("1_2ldlc")]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_tf1io")
@@ -67,10 +65,12 @@ libraries = {
 [node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
 modulate = Color(1, 1, 1, 0)
 z_index = 1000
-offset_left = -624.0
-offset_top = -360.0
-offset_right = 696.0
-offset_bottom = 384.0
+offset_left = -6896.0
+offset_top = -5464.0
+offset_right = 6760.0
+offset_bottom = 5480.0
 color = Color(0, 0, 0, 1)
+
+[node name="Menu" parent="." instance=ExtResource("3_tg31d")]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

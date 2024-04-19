@@ -82,5 +82,3 @@ func _on_move_timer_timeout():
 # just snippets of code I tried that may be helpful in the future:
 	#await get_tree().create_timer(0.2).timeout
 	#$MoveTimer.timeout.disconnect(_on_move_timer_timeout)
-
-
